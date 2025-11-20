@@ -69,20 +69,19 @@ input {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-/-output "eDP-1" {
-    // Uncomment this line to disable this output.
-    // off
+output "HDMI-A-1" { //tv da minha mãe 
+    mode "1920x1080@120.030"
+    scale 3
+    transform "normal"
 
-    // Resolution and, optionally, refresh rate of the output.
-    // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
-    // If the refresh rate is omitted, niri will pick the highest refresh rate
-    // for the resolution.
-    // If the mode is omitted altogether or is invalid, niri will pick one automatically.
-    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
+}
+
+output "eDP-1" {
+    // off
     mode "1440x900@120.030"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 2
+    scale 5
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
@@ -104,7 +103,6 @@ input {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
-    // Set gaps around windows in logical pixels.
     gaps 10
 
     // When to center a column when changing focus, options are:
@@ -113,7 +111,7 @@ layout {
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "never"
+    center-focused-column "on-overflow"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -250,11 +248,7 @@ layout {
 
 //set the applications to spawn at startup of the system
 //you can also spawn shell apps using spawn-sh-at-startup "my command"
-spawn-at-startup "waybar" 
-spawn-at-startup "swaync"
-spawn-at-startup "waypaper" "--random"
-spawn-at-startup "copyq"
- 
+spawn-at-startup "qs" "-c" "noctalia-shell"
 
 // uncommenting this line will make that the apps ommit their client side decorations if possible, uncommenting it makes the apps scient that is being tiled and disablign rounded corners
 prefer-no-csd
@@ -272,7 +266,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
     // off
 
-    // Slow down all animations by this factor. Values below 1 speed them up instead.
+// Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
 }
 

@@ -71,7 +71,7 @@ input {
 // Remember to uncomment the node by removing "/-"!
 output "HDMI-A-1" { //tv da minha mãe 
     mode "1920x1080@120.030"
-    scale 3
+    scale 1
     transform "normal"
 
 }
@@ -111,7 +111,7 @@ layout {
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "on-overflow"
+    center-focused-column "never"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -304,7 +304,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+BACKSPACE { close-window; } //fechar janelas
 
-    Mod+Q hotkey-overlay-title="Open a Terminal: tabby" { spawn "tabby"; } //abrir terminal (tabby)
+    Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; } //abrir terminal (tabby)
 
     Mod+TAB hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun" "-show-icons"; } //lançador de aplicativos (rofi)
 

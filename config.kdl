@@ -271,7 +271,9 @@ animations {
 }
 
 //-----------------------------WINDOW-RULES----------------------------------
-
+debug {
+  deactivate-unfocused-windows
+}
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 // Example: block out two password managers from screen capture.

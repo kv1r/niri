@@ -253,7 +253,7 @@ spawn-at-startup "qs" "-c" "noctalia-shell"
 // uncommenting this line will make that the apps ommit their client side decorations if possible, uncommenting it makes the apps scient that is being tiled and disablign rounded corners
 prefer-no-csd
 
-//---------------------------SCREENSHOT-PATH---------------------------------
+//------------------------------SCREENSHOT----------------------------------
 
 // The path is formatted with strftime(3) to give you the screenshot date and time.
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -263,6 +263,11 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 //------------------------------ANIMATIONS-----------------------------------
 
+gestures{
+  hot-corners {
+    off
+  }
+}
 animations {
     // off
 
@@ -272,8 +277,9 @@ animations {
 
 //-----------------------------WINDOW-RULES----------------------------------
 debug {
-  deactivate-unfocused-windows
+  deactivate-unfocused-windows;
 }
+
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 // Example: block out two password managers from screen capture.

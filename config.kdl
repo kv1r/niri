@@ -63,12 +63,6 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
-// You can configure outputs by their name, which you can find
-// by running `niri msg outputs` while inside a niri instance.
-// The built-in laptop monitor is usually called "eDP-1".
-// Find more information on the wiki:
-// https://yalter.github.io/niri/Configuration:-Outputs
-// Remember to uncomment the node by removing "/-"!
 output "HDMI-A-1" { //tv da minha mãe 
     mode "1920x1080@120.030"
     scale 1
@@ -99,21 +93,15 @@ output "eDP-1" {
     position x=1280 y=0
 }
 
-// Settings that influence how windows are positioned and sized.
-// Find more information on the wiki:
+hotkey-overlay {
+  skip-at-startup
+}
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     gaps 10
 
-    // When to center a column when changing focus, options are:
-    // - "never", default behavior, focusing an off-screen column will keep at the left
-    //   or right edge of the screen.
-    // - "always", the focused column will always be centered.
-    // - "on-overflow", focusing a column will center it if it doesn't fit
-    //   together with the previously focused column.
     center-focused-column "never"
 
-    // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
         // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.

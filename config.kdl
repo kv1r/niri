@@ -2,17 +2,10 @@
 input {
   focus-follows-mouse
     keyboard {
-        xkb {
-            // You can set rules, model, layout, variant and options.
-            // For more information, see xkeyboard-config(7).
+        xkb{
+          layout "br"
+          variant "abnt2"
 
-            // For example:
-            // layout "us,ru"
-            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
-
-            // If this section is empty, niri will fetch xkb settings
-            // from org.freedesktop.locale1. You can control these using
-            // localectl set-x11-keymap.
         }
 
         // Enable numlock on startup, omitting this setting disables it.
@@ -38,9 +31,8 @@ input {
 
     mouse {
         // off
-        // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
+        accel-profile "flat"
+         accel-speed 0
         // scroll-method "no-scroll"
     }
 
@@ -265,7 +257,6 @@ animations {
 
 //-----------------------------WINDOW-RULES----------------------------------
 debug {
-  deactivate-unfocused-windows;
 }
 
 // Work around WezTerm's initial configure bug

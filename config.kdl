@@ -1,39 +1,25 @@
-
 input {
-  focus-follows-mouse
     keyboard {
         xkb{
           layout "br"
           variant "abnt2"
-
         }
-
-        // Enable numlock on startup, omitting this setting disables it.
         numlock
     }
 
     // Next sections include libinput settings.
     // Omitting settings disables them, or leaves them at their default values.
-    // All commented-out settings here are examples, not defaults.
     touchpad {
         // off
         tap
-        // dwt
-        // dwtp
-        // drag false
-        // drag-lock
         natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
-        // scroll-method "two-finger"
-        // disabled-on-external-mouse
     }
 
     mouse {
-        // off
         accel-profile "flat"
-         accel-speed 0
-        // scroll-method "no-scroll"
+        accel-speed 0
     }
 
     trackpoint {
@@ -276,7 +262,7 @@ debug {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 10
+    geometry-corner-radius 0
     clip-to-geometry true
 }
 

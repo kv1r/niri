@@ -246,7 +246,7 @@ window-rule {
 
     match title="^Picture-in-Picture"
     open-floating true
-    default-floating-position x=500 y=643 relative-to="bottom-right"
+    default-floating-position x=10 y=643 relative-to="bottom-right"
     default-column-width {fixed 450;}
     default-window-height {fixed 225;}
     

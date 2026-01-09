@@ -246,9 +246,9 @@ window-rule {
 
     match title="^Picture-in-Picture"
     open-floating true
-    default-floating-position x=10 y=643 relative-to="bottom-right"
-    default-column-width {fixed 450;}
-    default-window-height {fixed 225;}
+    default-floating-position x=10 y=693 relative-to="bottom-right"
+    default-column-width {fixed 350;}
+    default-window-height {fixed 175;}
     
     // block-out-from "screencast"
 }
@@ -256,7 +256,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 0
+    geometry-corner-radius 15
     clip-to-geometry true
 }
 

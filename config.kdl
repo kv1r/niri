@@ -214,8 +214,8 @@ layout {
 
 //set the applications to spawn at startup of the system
 //you can also spawn shell apps using spawn-sh-at-startup "my command"
-spawn-at-startup "qs" "-c" "noctalia-shell"
-
+spawn-at-startup "waypaper" "--random"
+spawn-at-startup "waybar"
 // uncommenting this line will make that the apps ommit their client side decorations if possible, uncommenting it makes the apps scient that is being tiled and disablign rounded corners
 prefer-no-csd
 
@@ -235,27 +235,21 @@ gestures{
   }
 }
 animations {
-    // off
-
-// Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+   slowdown 1.4
 }
 
-//-----------------------------WINDOW-RULES----------------------------------
-debug {
-}
-
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
-// Example: block out two password managers from screen capture.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+//------------------------------WINDOW-RULES----------------------------------
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
-
+    match app-id=r#"^org\.gnome\.World\.Secrets$"# 
     block-out-from "screen-capture"
 
-    // Use this instead if you want them visible on third-party screenshot tools.
+    match title="^Picture-in-Picture"
+    open-floating true
+    default-floating-position x=500 y=643 relative-to="bottom-right"
+    default-column-width {fixed 450;}
+    default-window-height {fixed 225;}
+    
     // block-out-from "screencast"
 }
 
@@ -269,7 +263,6 @@ window-rule {
 //-------------------------------BINDS---------------------------------------
 
 binds {
-    // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+BACKSPACE { close-window; } //fechar janelas
 
     Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; } //abrir terminal (tabby)
